@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <meta name="author" content="https://linktr.ee/luccasassa" />
+    <meta
+      name="description"
+      content="Luca's little projects. If you found this content useful, please tap the ♥️ icon and give me a follow. Thanks ☺️"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="https://i.imgur.com/l6Z1OOF.png" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./template.css" />
+
+    <!-- TITLE -->
+    <title>EN KeyCodes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="press" id="press">
+        <p>Press any key to get the keyCode</p>
+      </div>
+      <div class="key-codes" id="key-codes">
+        <div class="event-key">
+          <h3 id="key"></h3>
+          <p>event.key</p>
+        </div>
+        <div class="event-key">
+          <h3 id="key-code"></h3>
+          <p>event.keyCode</p>
+        </div>
+        <div class="event-key">
+          <h3 id="code"></h3>
+          <p>event.code</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./scripts.js"></script>
+
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              var div = document.createElement('div');
+              div.innerHTML = this.responseText;
+              document.body.appendChild(div)
+          }
+      }
+      
+      xhttp.open("GET", "https://raw.githubusercontent.com/luccasassa/watermarks/main/four.html", true);
+      xhttp.send();
+  </script>
+  </body>
+</html>
